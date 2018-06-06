@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">ChatApp</string>
+    <string name="search_prompt">Enter e-mail id to be searched:</string>
+    <string name="search_button">Search</string>
 </resources>

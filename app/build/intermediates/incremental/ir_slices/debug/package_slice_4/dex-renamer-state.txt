@@ -1,0 +1,4 @@
+#Wed Jun 06 15:46:19 IST 2018
+base.0=/home/dhruvatara/Documents/ChatApp/app/build/intermediates/transforms/dexMerger/debug/5
+path.0=classes.dex
+renamed.0=classes.dex

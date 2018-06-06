@@ -25,16 +25,18 @@ class DefaultRealmModuleMediator extends RealmProxyMediator {
 
     private static final Set<Class<? extends RealmModel>> MODEL_CLASSES;
     static {
-        Set<Class<? extends RealmModel>> modelClasses = new HashSet<Class<? extends RealmModel>>(2);
+        Set<Class<? extends RealmModel>> modelClasses = new HashSet<Class<? extends RealmModel>>(3);
         modelClasses.add(com.example.aniket.chatapp.Database.ConnectionsRealm.class);
+        modelClasses.add(com.example.aniket.chatapp.Database.UserIdRealm.class);
         modelClasses.add(com.example.aniket.chatapp.Database.MessagesRealm.class);
         MODEL_CLASSES = Collections.unmodifiableSet(modelClasses);
     }
 
     @Override
     public Map<Class<? extends RealmModel>, OsObjectSchemaInfo> getExpectedObjectSchemaInfoMap() {
-        Map<Class<? extends RealmModel>, OsObjectSchemaInfo> infoMap = new HashMap<Class<? extends RealmModel>, OsObjectSchemaInfo>(2);
+        Map<Class<? extends RealmModel>, OsObjectSchemaInfo> infoMap = new HashMap<Class<? extends RealmModel>, OsObjectSchemaInfo>(3);
         infoMap.put(com.example.aniket.chatapp.Database.ConnectionsRealm.class, io.realm.com_example_aniket_chatapp_Database_ConnectionsRealmRealmProxy.getExpectedObjectSchemaInfo());
+        infoMap.put(com.example.aniket.chatapp.Database.UserIdRealm.class, io.realm.com_example_aniket_chatapp_Database_UserIdRealmRealmProxy.getExpectedObjectSchemaInfo());
         infoMap.put(com.example.aniket.chatapp.Database.MessagesRealm.class, io.realm.com_example_aniket_chatapp_Database_MessagesRealmRealmProxy.getExpectedObjectSchemaInfo());
         return infoMap;
     }
@@ -45,6 +47,9 @@ class DefaultRealmModuleMediator extends RealmProxyMediator {
 
         if (clazz.equals(com.example.aniket.chatapp.Database.ConnectionsRealm.class)) {
             return io.realm.com_example_aniket_chatapp_Database_ConnectionsRealmRealmProxy.createColumnInfo(schemaInfo);
+        }
+        if (clazz.equals(com.example.aniket.chatapp.Database.UserIdRealm.class)) {
+            return io.realm.com_example_aniket_chatapp_Database_UserIdRealmRealmProxy.createColumnInfo(schemaInfo);
         }
         if (clazz.equals(com.example.aniket.chatapp.Database.MessagesRealm.class)) {
             return io.realm.com_example_aniket_chatapp_Database_MessagesRealmRealmProxy.createColumnInfo(schemaInfo);
@@ -58,6 +63,9 @@ class DefaultRealmModuleMediator extends RealmProxyMediator {
 
         if (clazz.equals(com.example.aniket.chatapp.Database.ConnectionsRealm.class)) {
             return "ConnectionsRealm";
+        }
+        if (clazz.equals(com.example.aniket.chatapp.Database.UserIdRealm.class)) {
+            return "UserIdRealm";
         }
         if (clazz.equals(com.example.aniket.chatapp.Database.MessagesRealm.class)) {
             return "MessagesRealm";
@@ -74,6 +82,9 @@ class DefaultRealmModuleMediator extends RealmProxyMediator {
 
             if (clazz.equals(com.example.aniket.chatapp.Database.ConnectionsRealm.class)) {
                 return clazz.cast(new io.realm.com_example_aniket_chatapp_Database_ConnectionsRealmRealmProxy());
+            }
+            if (clazz.equals(com.example.aniket.chatapp.Database.UserIdRealm.class)) {
+                return clazz.cast(new io.realm.com_example_aniket_chatapp_Database_UserIdRealmRealmProxy());
             }
             if (clazz.equals(com.example.aniket.chatapp.Database.MessagesRealm.class)) {
                 return clazz.cast(new io.realm.com_example_aniket_chatapp_Database_MessagesRealmRealmProxy());
@@ -98,6 +109,9 @@ class DefaultRealmModuleMediator extends RealmProxyMediator {
         if (clazz.equals(com.example.aniket.chatapp.Database.ConnectionsRealm.class)) {
             return clazz.cast(io.realm.com_example_aniket_chatapp_Database_ConnectionsRealmRealmProxy.copyOrUpdate(realm, (com.example.aniket.chatapp.Database.ConnectionsRealm) obj, update, cache));
         }
+        if (clazz.equals(com.example.aniket.chatapp.Database.UserIdRealm.class)) {
+            return clazz.cast(io.realm.com_example_aniket_chatapp_Database_UserIdRealmRealmProxy.copyOrUpdate(realm, (com.example.aniket.chatapp.Database.UserIdRealm) obj, update, cache));
+        }
         if (clazz.equals(com.example.aniket.chatapp.Database.MessagesRealm.class)) {
             return clazz.cast(io.realm.com_example_aniket_chatapp_Database_MessagesRealmRealmProxy.copyOrUpdate(realm, (com.example.aniket.chatapp.Database.MessagesRealm) obj, update, cache));
         }
@@ -112,6 +126,8 @@ class DefaultRealmModuleMediator extends RealmProxyMediator {
 
         if (clazz.equals(com.example.aniket.chatapp.Database.ConnectionsRealm.class)) {
             io.realm.com_example_aniket_chatapp_Database_ConnectionsRealmRealmProxy.insert(realm, (com.example.aniket.chatapp.Database.ConnectionsRealm) object, cache);
+        } else if (clazz.equals(com.example.aniket.chatapp.Database.UserIdRealm.class)) {
+            io.realm.com_example_aniket_chatapp_Database_UserIdRealmRealmProxy.insert(realm, (com.example.aniket.chatapp.Database.UserIdRealm) object, cache);
         } else if (clazz.equals(com.example.aniket.chatapp.Database.MessagesRealm.class)) {
             io.realm.com_example_aniket_chatapp_Database_MessagesRealmRealmProxy.insert(realm, (com.example.aniket.chatapp.Database.MessagesRealm) object, cache);
         } else {
@@ -133,6 +149,8 @@ class DefaultRealmModuleMediator extends RealmProxyMediator {
 
             if (clazz.equals(com.example.aniket.chatapp.Database.ConnectionsRealm.class)) {
                 io.realm.com_example_aniket_chatapp_Database_ConnectionsRealmRealmProxy.insert(realm, (com.example.aniket.chatapp.Database.ConnectionsRealm) object, cache);
+            } else if (clazz.equals(com.example.aniket.chatapp.Database.UserIdRealm.class)) {
+                io.realm.com_example_aniket_chatapp_Database_UserIdRealmRealmProxy.insert(realm, (com.example.aniket.chatapp.Database.UserIdRealm) object, cache);
             } else if (clazz.equals(com.example.aniket.chatapp.Database.MessagesRealm.class)) {
                 io.realm.com_example_aniket_chatapp_Database_MessagesRealmRealmProxy.insert(realm, (com.example.aniket.chatapp.Database.MessagesRealm) object, cache);
             } else {
@@ -141,6 +159,8 @@ class DefaultRealmModuleMediator extends RealmProxyMediator {
             if (iterator.hasNext()) {
                 if (clazz.equals(com.example.aniket.chatapp.Database.ConnectionsRealm.class)) {
                     io.realm.com_example_aniket_chatapp_Database_ConnectionsRealmRealmProxy.insert(realm, iterator, cache);
+                } else if (clazz.equals(com.example.aniket.chatapp.Database.UserIdRealm.class)) {
+                    io.realm.com_example_aniket_chatapp_Database_UserIdRealmRealmProxy.insert(realm, iterator, cache);
                 } else if (clazz.equals(com.example.aniket.chatapp.Database.MessagesRealm.class)) {
                     io.realm.com_example_aniket_chatapp_Database_MessagesRealmRealmProxy.insert(realm, iterator, cache);
                 } else {
@@ -158,6 +178,8 @@ class DefaultRealmModuleMediator extends RealmProxyMediator {
 
         if (clazz.equals(com.example.aniket.chatapp.Database.ConnectionsRealm.class)) {
             io.realm.com_example_aniket_chatapp_Database_ConnectionsRealmRealmProxy.insertOrUpdate(realm, (com.example.aniket.chatapp.Database.ConnectionsRealm) obj, cache);
+        } else if (clazz.equals(com.example.aniket.chatapp.Database.UserIdRealm.class)) {
+            io.realm.com_example_aniket_chatapp_Database_UserIdRealmRealmProxy.insertOrUpdate(realm, (com.example.aniket.chatapp.Database.UserIdRealm) obj, cache);
         } else if (clazz.equals(com.example.aniket.chatapp.Database.MessagesRealm.class)) {
             io.realm.com_example_aniket_chatapp_Database_MessagesRealmRealmProxy.insertOrUpdate(realm, (com.example.aniket.chatapp.Database.MessagesRealm) obj, cache);
         } else {
@@ -179,6 +201,8 @@ class DefaultRealmModuleMediator extends RealmProxyMediator {
 
             if (clazz.equals(com.example.aniket.chatapp.Database.ConnectionsRealm.class)) {
                 io.realm.com_example_aniket_chatapp_Database_ConnectionsRealmRealmProxy.insertOrUpdate(realm, (com.example.aniket.chatapp.Database.ConnectionsRealm) object, cache);
+            } else if (clazz.equals(com.example.aniket.chatapp.Database.UserIdRealm.class)) {
+                io.realm.com_example_aniket_chatapp_Database_UserIdRealmRealmProxy.insertOrUpdate(realm, (com.example.aniket.chatapp.Database.UserIdRealm) object, cache);
             } else if (clazz.equals(com.example.aniket.chatapp.Database.MessagesRealm.class)) {
                 io.realm.com_example_aniket_chatapp_Database_MessagesRealmRealmProxy.insertOrUpdate(realm, (com.example.aniket.chatapp.Database.MessagesRealm) object, cache);
             } else {
@@ -187,6 +211,8 @@ class DefaultRealmModuleMediator extends RealmProxyMediator {
             if (iterator.hasNext()) {
                 if (clazz.equals(com.example.aniket.chatapp.Database.ConnectionsRealm.class)) {
                     io.realm.com_example_aniket_chatapp_Database_ConnectionsRealmRealmProxy.insertOrUpdate(realm, iterator, cache);
+                } else if (clazz.equals(com.example.aniket.chatapp.Database.UserIdRealm.class)) {
+                    io.realm.com_example_aniket_chatapp_Database_UserIdRealmRealmProxy.insertOrUpdate(realm, iterator, cache);
                 } else if (clazz.equals(com.example.aniket.chatapp.Database.MessagesRealm.class)) {
                     io.realm.com_example_aniket_chatapp_Database_MessagesRealmRealmProxy.insertOrUpdate(realm, iterator, cache);
                 } else {
@@ -204,6 +230,9 @@ class DefaultRealmModuleMediator extends RealmProxyMediator {
         if (clazz.equals(com.example.aniket.chatapp.Database.ConnectionsRealm.class)) {
             return clazz.cast(io.realm.com_example_aniket_chatapp_Database_ConnectionsRealmRealmProxy.createOrUpdateUsingJsonObject(realm, json, update));
         }
+        if (clazz.equals(com.example.aniket.chatapp.Database.UserIdRealm.class)) {
+            return clazz.cast(io.realm.com_example_aniket_chatapp_Database_UserIdRealmRealmProxy.createOrUpdateUsingJsonObject(realm, json, update));
+        }
         if (clazz.equals(com.example.aniket.chatapp.Database.MessagesRealm.class)) {
             return clazz.cast(io.realm.com_example_aniket_chatapp_Database_MessagesRealmRealmProxy.createOrUpdateUsingJsonObject(realm, json, update));
         }
@@ -217,6 +246,9 @@ class DefaultRealmModuleMediator extends RealmProxyMediator {
 
         if (clazz.equals(com.example.aniket.chatapp.Database.ConnectionsRealm.class)) {
             return clazz.cast(io.realm.com_example_aniket_chatapp_Database_ConnectionsRealmRealmProxy.createUsingJsonStream(realm, reader));
+        }
+        if (clazz.equals(com.example.aniket.chatapp.Database.UserIdRealm.class)) {
+            return clazz.cast(io.realm.com_example_aniket_chatapp_Database_UserIdRealmRealmProxy.createUsingJsonStream(realm, reader));
         }
         if (clazz.equals(com.example.aniket.chatapp.Database.MessagesRealm.class)) {
             return clazz.cast(io.realm.com_example_aniket_chatapp_Database_MessagesRealmRealmProxy.createUsingJsonStream(realm, reader));
@@ -232,6 +264,9 @@ class DefaultRealmModuleMediator extends RealmProxyMediator {
 
         if (clazz.equals(com.example.aniket.chatapp.Database.ConnectionsRealm.class)) {
             return clazz.cast(io.realm.com_example_aniket_chatapp_Database_ConnectionsRealmRealmProxy.createDetachedCopy((com.example.aniket.chatapp.Database.ConnectionsRealm) realmObject, 0, maxDepth, cache));
+        }
+        if (clazz.equals(com.example.aniket.chatapp.Database.UserIdRealm.class)) {
+            return clazz.cast(io.realm.com_example_aniket_chatapp_Database_UserIdRealmRealmProxy.createDetachedCopy((com.example.aniket.chatapp.Database.UserIdRealm) realmObject, 0, maxDepth, cache));
         }
         if (clazz.equals(com.example.aniket.chatapp.Database.MessagesRealm.class)) {
             return clazz.cast(io.realm.com_example_aniket_chatapp_Database_MessagesRealmRealmProxy.createDetachedCopy((com.example.aniket.chatapp.Database.MessagesRealm) realmObject, 0, maxDepth, cache));

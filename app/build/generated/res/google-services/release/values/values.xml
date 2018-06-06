@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">514716186821-onl33f9bvpqaldic0afe5b92snb8hg0k.apps.googleusercontent.com</string>
+    <string name="firebase_database_url" translatable="false">https://lets-chat-1528193737836.firebaseio.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">514716186821</string>
+    <string name="google_api_key" translatable="false">AIzaSyDoljgFhTBZ-tu9_P-R4-7iqob0IojfBP8</string>
+    <string name="google_app_id" translatable="false">1:514716186821:android:dbc9d28924e295ea</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyDoljgFhTBZ-tu9_P-R4-7iqob0IojfBP8</string>
+    <string name="google_storage_bucket" translatable="false">lets-chat-1528193737836.appspot.com</string>
+    <string name="project_id" translatable="false">lets-chat-1528193737836</string>
+</resources>

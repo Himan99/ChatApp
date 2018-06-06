@@ -15,6 +15,8 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.aniket.chatapp.Database.UserIdRealm;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -26,6 +28,8 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
+
+import io.realm.Realm;
 
 public class CreateUserActivity extends AppCompatActivity {
 
@@ -67,7 +71,7 @@ public class CreateUserActivity extends AppCompatActivity {
     private class  NetAsyncTask extends AsyncTask<String,Integer,Integer> {
 
         Context context;
-
+        Realm realm= Realm.getDefaultInstance();
         private NetAsyncTask(Context context) {
             this.context = context.getApplicationContext();
         }
@@ -134,8 +138,15 @@ public class CreateUserActivity extends AppCompatActivity {
                     Log.i("TAG", response.toString());
                     JSONObject jsonObject=new JSONObject(response.toString());
 
-                        if (jsonObject.get("name").equals( userName))
+                        if (jsonObject.get("name").equals( userName)) {
+                            realm.beginTransaction();
+                            String uid=jsonObject.getString("_id");
+                            UserIdRealm ur=realm.createObject(UserIdRealm.class);
+                            ur.setUid(uid);
+                            realm.commitTransaction();
+                            realm.close();
                             result = 1;
+                        }
                         else
                             result=0;
 

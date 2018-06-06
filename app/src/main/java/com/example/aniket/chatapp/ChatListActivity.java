@@ -26,7 +26,7 @@ public class ChatListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         realm=Realm.getDefaultInstance();
-        prepare();
+        //prepare();
         fab=findViewById(R.id.fab);
 
         connectionsRealms=realm.where(ConnectionsRealm.class).findAll();
