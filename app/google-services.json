@@ -1,0 +1,67 @@
+{
+  "project_info": {
+    "project_number": "514716186821",
+    "firebase_url": "https://lets-chat-1528193737836.firebaseio.com",
+    "project_id": "lets-chat-1528193737836",
+    "storage_bucket": "lets-chat-1528193737836.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:514716186821:android:dbc9d28924e295ea",
+        "android_client_info": {
+          "package_name": "com.example.aniket.chatapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "514716186821-73i81o3sfvjlsdu8mm3el2hv9t2uj6h6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.aniket.chatapp",
+            "certificate_hash": "0ef51fdd53a50cd6452ef061184e61adf81b003f"
+          }
+        },
+        {
+          "client_id": "514716186821-onl33f9bvpqaldic0afe5b92snb8hg0k.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "514716186821-95rjp06kvqprfbqo027igtfhgmu1en6q.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "514716186821-dupcl5dkg7f4k5qoukpbon8l5ktj4cme.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "514716186821-onl33f9bvpqaldic0afe5b92snb8hg0k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDoljgFhTBZ-tu9_P-R4-7iqob0IojfBP8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "514716186821-onl33f9bvpqaldic0afe5b92snb8hg0k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
